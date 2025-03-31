@@ -13,14 +13,14 @@ class EvaluationPipeline:
         pass
 
     def main(self):
-        init_dagshub(REPO_OWNER, REPO_NAME)
+        #init_dagshub(REPO_OWNER, REPO_NAME)
 # Run Evaluation Pipeline
 
         config_manager = ConfigurationManager()
         eval_config = config_manager.get_evaluation_config()
         evaluation = Evaluation(eval_config)
         evaluation.evaluation()
-        evaluation.log_into_mlflow()
+        #evaluation.log_into_mlflow()
 
 
 if __name__ == '__main__':
