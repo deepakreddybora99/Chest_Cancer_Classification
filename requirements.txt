@@ -10,6 +10,7 @@ matplotlib
 seaborn
 python-box==6.0.2
 pyYAML
+dagshub
 tqdm
 ensure==1.0.2
 joblib

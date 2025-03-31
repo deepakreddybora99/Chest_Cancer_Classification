@@ -3,7 +3,8 @@ from chestcancer.constants import *
 from chestcancer.utils.common import read_yaml, create_directories
 from chestcancer.entity.config_entity import (DataIngestionConfig, 
                                               PrepareBaseModelConfig,
-                                              TrainingConfig)
+                                              TrainingConfig,
+                                              EvaluationConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -73,3 +74,16 @@ class ConfigurationManager:
         )
 
         return training_config
+    
+
+    
+    def get_evaluation_config(self) -> EvaluationConfig:
+        eval_config=EvaluationConfig(
+            path_of_model="artifacts/training/model.h5",
+            training_data="artifacts/data_ingestion/chest cancer dataset",
+            mlflow_uri=f"https://dagshub.com/{REPO_OWNER}/{REPO_NAME}.mlflow",
+            all_params=self.params,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_batch_size=self.params.BATCH_SIZE
+        )
+        return eval_config
