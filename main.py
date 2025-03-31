@@ -1,6 +1,6 @@
 from chestcancer import logger
 
-from chestcancer.pipeline.stage_01_data_ingetion import DataIngestionTrainingPipeline
+from chestcancer.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from chestcancer.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
 from chestcancer.pipeline.stage_03_model_trainer import ModelTrainingPipeline
 from chestcancer.pipeline.stage_04_model_evaluation import EvaluationPipeline
